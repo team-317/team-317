@@ -19,5 +19,4 @@ Hello, I am team-317.
 
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username=team-317&theme=light&hide_border=true&include_all_commits=true&count_private=true)
-![Github Stats](https://github-readme-streak-stats.herokuapp.com/?user=team-317&theme=light&hide_border=true&fire=red&sideNums=red)<br/>
 
