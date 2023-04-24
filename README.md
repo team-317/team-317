@@ -16,7 +16,8 @@
 
 
 Hi, here👋
-- 🔭 I’m currently learning remote sensing image processing
+
+- 🔭 I am currently working on remote sensing image de-clouding and also interested in bpf technology.
 
 
 ### ⚙️ &nbsp;GitHub Analytics
