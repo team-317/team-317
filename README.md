@@ -1,6 +1,6 @@
-### Some output
-+ "Thick Cloud Removal in Multitemporal Remote Sensing Images via Low-Rank Regularized Self-Supervised Network" at [TRGS](https://ieeexplore.ieee.org/document/10414167)
-
+### Some academic outputs
++ [LRRSSN](https://github.com/try-agaaain/cloud-removal/tree/clean): "Thick Cloud Removal in Multitemporal Remote Sensing Images via Low-Rank Regularized Self-Supervised Network" at [TGRS](https://ieeexplore.ieee.org/document/10414167)
++ [GPTtrace](https://github.com/eunomia-bpf/GPTtrace): "KEN: Kernel Extensions using Natural Language" at https://arxiv.org/abs/2312.05531
 ### Some practice
 
 |                          Repository                          |                      Describe                      |
