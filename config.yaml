@@ -6,8 +6,10 @@ theme: hugo-book
 
 services:
   disqus:
+    # disqus评论区的设置：https://https-try-agaaain-github-io-try-agaaain.disqus.com/admin/settings/reactions/
     shortname: https-try-agaaain-github-io-try-agaaain
-    
+
+
 # Book configuration
 disablePathToLower: true
 enableGitInfo: true
