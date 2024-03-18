@@ -9,34 +9,21 @@ services:
     # disqus评论区的设置：https://https-try-agaaain-github-io-try-agaaain.disqus.com/admin/settings/reactions/
     shortname: https-try-agaaain-github-io-try-agaaain
 
-markup:
-  highlight:
-    anchorLineNos: false
-    codeFences: true
-    guessSyntax: false
-    hl_Lines: ""
-    hl_inline: false
-    lineAnchors: ""
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
-    noClasses: true
-    noHl: false
-    style: monokai
-    tabWidth: 4
-
 # Book configuration
 disablePathToLower: true
 enableGitInfo: true
 
 # Needed for mermaid/katex shortcodes
 markup:
+  highlight:
+    noClasses: true
+    style: friendly
   goldmark:
     renderer:
       unsafe: true
   tableOfContents:
     startLevel: 1
-
+  
 # Multi-lingual mode config
 # There are different options to translate files
 # See https://gohugo.io/content-management/multilingual/#translation-by-filename

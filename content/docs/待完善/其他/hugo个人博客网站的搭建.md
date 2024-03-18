@@ -4,7 +4,7 @@
 
 可以在 https://disqus.com/admin/create 为自己的网站添加disqus，随后在`setting > general`中获取`shortname`。在`config.yml`中添加`service`选项并设置好`shortname`：
 
-```yaml {linenos=table,hl_lines=[1,"2-3"],linenostart=199}
+```yaml
 services:
   disqus:
     shortname: your-shortname
@@ -24,7 +24,7 @@ services:
 
 可以通过编辑`config.yml`文件中的`menu`选项在页面菜单中增加链接，例如：
 
-```c++
+```yaml
 menu:
   # before: []
   after:
@@ -48,9 +48,18 @@ menu:
 
 ![image-20240318213435901](images/image-20240318213435901.png)
 
-左边是设置前，后面是设置后，其中左图中的`:`因为背景颜色的淡化而变得不可见。
+左边是设置前，右边是设置后，其中左图中的`:`因为背景颜色的淡化而变得不可见。
 
+后面了解到可以在`config.yaml`中设置`markup > highlight`来设置代码高亮，于是直接在`config.yaml`中添加了如下内容：
 
+```yaml
+markup:
+  highlight:
+    style: friendly
+    tabWidth: 4
+```
+
+需要注意的是，`yaml`文件中的标识不要分开写，否则可能会造成某种混乱，比如我的`config.yaml`中原本存在另一个`markup`标识，但我没太注意，将两个`markup`标识分开写，导致一直没能设置成功。对应的 [issue](https://github.com/alex-shpak/hugo-book/issues/608) 。
 
 ### 图片链接定向问题
 
@@ -65,7 +74,6 @@ menu:
         └── images
                 └── test_image.png
 ```
-
 
 并在about.md中通过 `![image](./images/test_image.png)`的方式使用了图片test_image.png，但是hugo并没有正确获取图像的位置，它将图像位置定位为：
 http://127.0.0.1:1313/docs/about/images/test_image.png
@@ -82,7 +90,7 @@ http://127.0.0.1:1313/docs/images/test_image.png
 
 不过第一篇博客中提到图像的链接地址是可以自定义的，那么通过自定义图像链接的生成代码就能解决问题了。于是根据他的描述我找到了`hugo-book`主题下的`layouts/_default/_markup/render-image.html`文件，其内容如下：
 
-```
+```go
 {{- if .Page.Site.Params.BookPortableLinks -}}
   {{- template "portable-image" . -}}
 {{- else -}}
@@ -108,4 +116,6 @@ http://127.0.0.1:1313/docs/images/test_image.png
 虽然不太能理解这些变量，但图像链接的生成代码很显眼：`  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}/>`。
 
 只要在路径前面添加`../`，当使用 `![image](./images/test_image.png)`时，便会自动的转为 `![image](.././images/test_image.png)`，这样自然就解决了。
+
+这个问题也花了我一些时间，后面记录到了`hugo-book`的 [issue](https://github.com/alex-shpak/hugo-book/issues/166#issuecomment-2003271419) 里。
 
