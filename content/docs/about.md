@@ -1,4 +1,5 @@
 ---
+bookHidden: true
 weight: 20
 ---
 

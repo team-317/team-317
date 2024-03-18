@@ -5,7 +5,7 @@ init:
 	hugo new site ./site
 fetch_sub_repo:
 	# 首次拉取子仓库
-	git clone --recursive https://github.com/alex-shpak/hugo-book
+	git clone --recursive https://github.com/alex-shpak/hugo-book ./themes/hugo-book
 	# 更新子仓库
 	git submodule update --recursive --remote
 
