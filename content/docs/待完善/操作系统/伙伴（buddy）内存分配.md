@@ -59,6 +59,8 @@ struct Page {
 
 对应代码：[code/os/02-memanagement/buddy/buddy.c](https://github.com/try-agaaain/riscv-operating-system-mooc/blob/lab/code/os/02-memanagement/buddy/buddy.c)
 
+这里将问题化简，不考虑页的分配，将内存作为整体进行字节级别的管理。一种方式是用单个空闲链表记录空闲内存块的位置，但当碎片较多时，查找空闲块比较耗时（O(n)级别），这里采用伙伴分配算法可以达到更快的速度（O(log(n))级别）
+
 伙伴分配算法将内存空间按2的幂次方进行划分，通过一个链表数组`free_list`来记录空闲块的位置，比如一块大小为`1024B+256B+128B`的内存块，初始时根据2的幂次方可以将它划分为如下三块，由`free_list`记录每一个空闲块的地址：
 
 ![image-20240323185027383](images/image-20240323185027383.png)
