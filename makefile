@@ -6,7 +6,7 @@ init:
 
 fetch_sub_repo:
 	# 首次拉取子仓库，仓库时间2024.3.18
-	git clone --recursive https://github.com/alex-shpak/hugo-book/tree/2dffe0bc7a5caac3e49bf2abe943ca412d5f4333 ./themes/hugo-book
+	git clone --recursive https://github.com/alex-shpak/hugo-book ./themes/hugo-book
 
 	# 更新子仓库
 	git submodule update --recursive --remote
