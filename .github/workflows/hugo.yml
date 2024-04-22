@@ -54,6 +54,8 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          echo "base_url:"
+          echo "${{ steps.pages.outputs.base_url }}"
           git submodule update --recursive --remote
           hugo \
             --minify \
